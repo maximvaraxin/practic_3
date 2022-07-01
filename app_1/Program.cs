@@ -9,36 +9,51 @@ namespace App_1
     {
         static void Main ( string[] args )
         {   
-            Console.Write( $" Введите координату х: " );
-            int param_x = Convert.ToInt32( Console.ReadLine() ); 
+            Console.WriteLine($"Координаты точки:");
+            double[] vector = AddCoordanate( 2 );
             
-            Console.Write( $" Введите координату y: " );
-            int param_y = Convert.ToInt32( Console.ReadLine() );
-            
-            Console.WriteLine($" Номер четверти: { SetPoint( param_x, param_y ) } ");
+            string result = ( vector[0] != 0  && vector[1]!= 0 ) ? $" Номер четверти: { SetPoint( vector ) } " : $" Одна из координат должна быть не равна 0!";
+            Console.WriteLine( result );
         }
 
-        static int SetPoint( int x, int y )
+        // добавляет координаты точки
+        static double[] AddCoordanate( int len )
+        {
+            double[] mass = new double[len];
+
+            for (int i = 0; i < mass.Length; i++)
+			{   
+                Console.Write( $" Введите координату { i + 1 }: " );
+                mass[i] = Convert.ToInt32(Console.ReadLine()); 
+			}
+
+            Console.WriteLine($"--------------------");
+
+            return mass;
+        }
+        
+        // возвращает номер четверти по установленным координатам
+        static int SetPoint( double[] param )
         {
             int result = 0;
 
-            if ( x > 0 && y > 0)
+            if( param[0] > 0 && param[1] > 0 )
             {
                 result = 1;
             }
-            else if ( x < 0 && y < 0)
-            {
-                result = 3;
-            }
-            else if ( x > 0 && y < 0)
+            else if( param[0] < 0 && param[1] > 0 )
             {
                 result = 2;
             }
-            else if(x < 0 && y > 0 )
+            else if( param[0] < 0 && param[1] < 0 ) 
+            {
+                result = 3;
+            }
+            else
             {
                 result = 4;
             }
-
+          
             return result;
         }
     }

@@ -11,20 +11,21 @@ namespace App_4
         static void Main ( string[] args )
         {   
             Console.Write( $" Введите число: " );
-            double num = Convert.ToInt32( Console.ReadLine() );
+            int num = Convert.ToInt32( Console.ReadLine() );
 
-            GetSqrt( num );
+            MathPowCounter( num );
         }
 
-        static void GetSqrt( double number )
+        // возвращает таблицу квадратов чисел от 1 до N
+        static void MathPowCounter( int number )
         {
-            double counter = 1;
+            int counter = 1;
 
             Console.Write( $" Результат: ");
            
             while( number >= counter )
             {
-                Console.Write( $"{ counter * counter } ");
+                Console.Write( $"{ Math.Pow( counter, 2) } ");
                 counter++;
             }
         }

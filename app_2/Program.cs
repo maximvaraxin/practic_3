@@ -13,37 +13,43 @@ namespace App_2
             
             Console.WriteLine($" Диапазон возможных координат точек в этой четверти: { GetQuarter( quarter ) } ");
         }
-
+        
+        // возвращает диапазон возможных координат точек в этой четверти
         static string GetQuarter( int quarter)
         {   
             string result = string.Empty;
-            Range param_x;
-            Range param_y;
+            string param_x;
+            string param_y;
 
-            
-            if ( quarter == 1 )
-            {   
-               param_x = 0..90;
-               param_y = 0..90;
-            }
-            else if ( quarter == 2 )
+            if( quarter <= 4 )
             {
-               param_x = 0..90;
-               param_y = 0..-90;
+                switch (quarter)
+                {
+                    case 1:
+                        param_x = " x > 0 ";
+                        param_y = " y > 0 ";
+                        break;
+                    case 2:
+                        param_x = " x < 0 ";
+                        param_y = " y > 0 ";
+                        break;
+                    case 3:
+                        param_x = " x < 0 ";
+                        param_y = " y < 0 ";
+                        break;
+                    default:
+                        param_x = " x > 0 ";
+                        param_y = " y < 0 ";
+                        break;
+                } 
             }
-            else if ( quarter == 3 )
+            else
             {
-               param_x = 0..-90;
-               param_y = 0..-90;
+                param_x = " -1 ";
+                param_y = " -1 ";
             }
-            else if( quarter == 4 )
-            {
-               param_x = 0..-90;
-               param_y = 0..90;
-            }
-            
-            return result = $"{param_x} {param_y}";
-            
+                                 
+            return result = $"{ param_x } | { param_y }";         
         }
     }
 }   
