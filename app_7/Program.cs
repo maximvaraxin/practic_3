@@ -1,10 +1,10 @@
 ﻿/*
- *  Задача 22: Напишите программу, которая принимает на вход число (N) и выдаёт таблицу квадратов чисел от 1 до N.
- *  5 -> 1, 4, 9, 16, 25.
- *  2 -> 1,4
+ *  Задача 23: Напишите программу, которая принимает на вход число (N) и выдаёт таблицу кубов чисел от 1 до N.
+ *  3 -> 1, 8, 27
+ *  5 -> 1, 8, 27, 64, 125
  */
 
-namespace App_4
+namespace App_7
 {
     class Programm
     {
@@ -21,19 +21,19 @@ namespace App_4
         {
             int counter = 1;
 
-            if( number >= counter)
+            if( number >= counter )
             {
-                Console.Write( $" Таблица квадратов чисел от 1 до N: ");
+                Console.Write( $" Таблица кубов чисел от 1 до N: ");
            
                 while( number >= counter )
                 {
-                    Console.Write( $"{ Math.Pow( counter, 2) } ");
+                    Console.Write( $"{ Math.Pow( counter, 3) } ");
                     counter++;
                 }
             }
             else
             {
-                Console.WriteLine( $" error : N > 0 " );
+                Console.WriteLine( $" error: N > 0  " );
             }          
         }
     }

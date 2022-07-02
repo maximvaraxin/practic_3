@@ -21,7 +21,7 @@ namespace App_2
             string param_x;
             string param_y;
 
-            if( quarter <= 4 )
+            if( quarter > 0 && quarter <= 4 )
             {
                 switch (quarter)
                 {

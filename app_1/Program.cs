@@ -9,15 +9,15 @@ namespace App_1
     {
         static void Main ( string[] args )
         {   
-            Console.WriteLine($"Координаты точки:");
-            double[] vector = AddCoordanate( 2 );
+            Console.WriteLine($"Координаты точки(x,y):");
+            double[] vector = SetPoint( 2 );
             
-            string result = ( vector[0] != 0  && vector[1]!= 0 ) ? $" Номер четверти: { SetPoint( vector ) } " : $" Одна из координат должна быть не равна 0!";
+            string result = vector[0] != 0  && vector[1] != 0 ? $" Номер четверти: { GetQuarter( vector ) } " : $" error: X != 0 и Y != 0 ";
             Console.WriteLine( result );
         }
 
         // добавляет координаты точки
-        static double[] AddCoordanate( int len )
+        static double[] SetPoint( int len )
         {
             double[] mass = new double[len];
 
@@ -33,7 +33,7 @@ namespace App_1
         }
         
         // возвращает номер четверти по установленным координатам
-        static int SetPoint( double[] param )
+        static int GetQuarter( double[] param )
         {
             int result = 0;
 
