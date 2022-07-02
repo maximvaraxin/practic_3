@@ -16,7 +16,7 @@ namespace App_7
             MathPowCounter( num );
         }
 
-        // возвращает таблицу квадратов чисел от 1 до N
+        // возвращает таблицу кубов чисел от 1 до N
         static void MathPowCounter( int number )
         {
             int counter = 1;

@@ -19,6 +19,7 @@ namespace App_5
             Console.Write( palidrome );
         }
 
+        // возвращает реверс числа
         static int GetReverse( int number )
         {   
             int result = 0;
